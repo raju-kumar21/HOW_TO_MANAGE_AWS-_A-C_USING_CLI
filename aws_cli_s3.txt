@@ -1,0 +1,95 @@
+ 
+ 	AWS S3 CLI
+ 	==========
+ 	
+ 	list S3 buckets
+ 	---------------
+ 	aws s3 ls
+ 	
+ 	creating bucket
+ 	---------------
+ 	aws s3 mb <target>
+ 	example:
+ 	aws s3 mb s3://cybromfiles --region us-west-2
+ 	aws s3 mb s3://cybromdata --region us-west-2
+ 	
+ 	create object inside bucket (uploading files in bucket)
+ 	-------------------------------------------------------
+ 	aws s3 cp <source> <target>
+ 	example:
+ 	aws s3 cp xyz.txt s3://cybromfiles
+ 	
+ 	list bucket objects
+ 	--------------------
+ 	aws s3 ls <target>
+ 	example:
+ 	aws s3 ls s3://cybromfiles
+ 	
+ 	copy object between buckets
+ 	---------------------------
+ 	aws s3 cp <source> <target>
+ 	example:
+ 	aws s3 cp s3://cybromfiles/xyz.txt s3://cybromdata
+ 	
+ 	move object between buckets
+ 	---------------------------
+ 	aws s3 mv <source> <target>
+ 	example:
+ 	aws s3 mv s3://cybromfiles/xyz.txt s3://cybromdata
+ 	
+ 	remove bucket object
+ 	--------------------
+ 	aws s3 rm <target>
+ 	example:
+ 	aws s3 rm s3://cybromfiles/xyz.txt
+ 	
+ 	remove bucket
+ 	-------------
+ 	aws s3 rb <target>
+ 	example:
+ 	aws s3 rb s3://cybromfiles
+ 	
+ 	sync bucket to local directory
+ 	-------------------------------
+ 	aws s3 sync <source> <target>
+ 	example:
+ 	aws s3 sync . s3://cybromfiles
+ 	
+ 	sync between buckets
+ 	--------------------
+ 	aws s3 sync <source> <target>
+ 	example:
+ 	aws s3 sync s3://cybromfiles s3://cybromdata
+ 	
+ 	delete all objects inside bucket
+ 	--------------------------------
+ 	aws s3 rm <target> --recursive
+ 	example:
+ 	aws s3 rm s3://cybromfiles/ --recursive
+
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
