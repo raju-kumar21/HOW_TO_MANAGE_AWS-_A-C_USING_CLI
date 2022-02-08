@@ -1,0 +1,31 @@
+    AWS EC2 CLI
+==================
+ 	
+   Launching Ec2
+-----------------
+ 
+ =>agws ec2 run-instances --image-id  ami-03d64741867e7bb94 --count 1 --instance-type t2.micro --key-name awskey
+ 
+ 
+ => aws ec2 describe-instances ==> show all exiting instances
+ 
+  Start Instance
+ ----------------
+ 
+ => aws ec2 start-instances --instance-ids i-0c9536ed931b96a27
+ 
+  Stop Instance
+ ---------------
+ 
+ => aws ec2 stop-instances --instance-ids i-0c9536ed931b96a27
+ 
+  Reboot instance
+ ------------------
+ 
+ => aws ec2 reboot-instances --instance-ids i-0c9536ed931b96a27
+ 
+  Terminate instance
+ ---------------------
+ 
+ => aws ec2 terminate-instances --instance-ids i-0c9536ed931b96a27
+ 
