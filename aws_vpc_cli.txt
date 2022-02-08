@@ -1,0 +1,120 @@
+
+	AWS VPC CLI
+	===========
+	
+	
+	list vpcs
+	---------
+	aws ec2 describe-vpcs
+	
+	create vpc
+	----------
+	aws ec2 create-vpc --cidr-block 10.0.0.0/16
+	
+	add tag to vpc
+	--------------
+	aws ec2 create-tags --resources vpc-0a6452d50fb784af9 --tags Key=Name,Value=MyVPC
+	
+	---------------------------------------------------------------------------------
+	
+	list subnets
+	------------
+	aws ec2 describe-subnets
+	
+	create subnet
+	-------------
+	aws ec2 create-subnet --vpc-id vpc-0f8c6b7d61988c64f --cidr-block 10.0.0.0/24
+	
+	add tag to subnet
+	-----------------
+	aws ec2 create-tags --resources subnet-0ac1dd3d19a71b723 --tags 
+	Key=Name,Value=myvpc-subnet
+	
+	---------------------------------------------------------------------------------
+	
+	list internet gateways
+	----------------------
+	aws ec2 describe-internet-gateways
+	
+	create internet gateway
+	-----------------------
+	aws ec2 create-internet-gateway
+	
+	add tag to internet gateway
+	---------------------------
+	aws ec2 create-tags --resources igw-0db2bae1b7cf28845 --tags Key=Name,Value=
+	myvpc-igw
+	
+	attach internet gateway to vpc
+	------------------------------
+	aws ec2 attach-internet-gateway --vpc-id vpc-0a6452d50fb784af9 
+	--internet-gateway-id igw-0db2bae1b7cf28845
+	
+	---------------------------------------------------------------------------------
+	
+	list route tables
+	-----------------
+	aws ec2 describe-route-tables
+	
+	create route table
+	------------------
+	aws ec2 create-route-table --vpc-id vpc-0a6452d50fb784af9
+	
+	add tag to route table
+	----------------------
+	aws ec2 create-tags --resources rtb-0ebac9c84943c6c00 --tags 
+	Key=Name,Value=vpc-route
+	
+	add route to route table
+	------------------------
+	aws ec2 create-route --route-table-id rtb-0ebac9c84943c6c00 
+	--destination-cidr-block 0.0.0.0/0 --gateway-id igw-0db2bae1b7cf28845
+	
+	list specific route table
+	-------------------------
+	aws ec2 describe-route-tables --route-table-ids rtb-0ebac9c84943c6c00
+	
+	subnet-0ac1dd3d19a71b723
+	rtb-0ebac9c84943c6c00
+	
+	accosiate route table with subnet 
+	---------------------------------
+	aws ec2 associate-route-table --subnet-id subnet-0ac1dd3d19a71b723 
+	--route-table-id rtb-0ebac9c84943c6c00
+	
+	---------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
